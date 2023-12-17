@@ -20,15 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\corePackages\Core.Mailing\Core.Mailing.csproj" />
-    <ProjectReference Include="..\..\corePackages\Core.WebAPI\Core.WebAPI.csproj" />
+    <ProjectReference Include="..\..\..\..\CorePackages\Core.WebAPI\Core.WebAPI.csproj" />
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\Persistence\Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Dtos" />
     <Folder Include="logs\" />
   </ItemGroup>
 

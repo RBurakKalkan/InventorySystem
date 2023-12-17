@@ -1,5 +1,4 @@
-﻿using Core.Security.Extensions;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
@@ -20,11 +19,5 @@ public class BaseController : ControllerBase
             : HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString()
                 ?? throw new InvalidOperationException("IP address cannot be retrieved from request.");
         return ipAddress;
-    }
-
-    protected int getUserIdFromRequest() //todo authentication behavior?
-    {
-        int userId = HttpContext.User.GetUserId();
-        return userId;
     }
 }

@@ -1,3 +1,4 @@
+using Application.Services.InventorySystemParams;
 using Core.Application.Pipelines.Authorization;
 using Core.Application.Pipelines.Caching;
 using Core.Application.Pipelines.Logging;
@@ -6,9 +7,6 @@ using Core.Application.Pipelines.Validation;
 using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Logging.Serilog;
 using Core.CrossCuttingConcerns.Logging.Serilog.Logger;
-using Core.ElasticSearch;
-using Core.Mailing;
-using Core.Mailing.MailKitImplementations;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -35,10 +33,9 @@ public static class ApplicationServiceRegistration
 
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-        services.AddSingleton<IMailService, MailKitMailService>();
         services.AddSingleton<LoggerServiceBase, FileLogger>();
-        services.AddSingleton<IElasticSearch, ElasticSearchManager>();
 
+        services.AddScoped<IInventorySystemService, InventorySystemManager>();
         return services;
     }
 

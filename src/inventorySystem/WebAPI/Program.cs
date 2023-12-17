@@ -4,10 +4,6 @@ using Core.CrossCuttingConcerns.Exceptions.Extensions;
 
 
 
-using Infrastructure;
-
-
-
 using Persistence;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using WebAPI;
@@ -20,7 +16,6 @@ builder.Services.AddControllers();
 builder.Services.AddApplicationServices();
 
 builder.Services.AddPersistenceServices(builder.Configuration);
-builder.Services.AddInfrastructureServices();
 builder.Services.AddHttpContextAccessor();
 
 
